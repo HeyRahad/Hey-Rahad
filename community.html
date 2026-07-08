@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — Hey Rahad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg-0:#070B1A; --card:#111827; --card-glass:rgba(17,24,39,0.6);
+    --line:rgba(148,163,184,0.12); --line-strong:rgba(148,163,184,0.22);
+    --text-hi:#ffffff; --text-mid:#a7b0c0; --text-low:#6b7385;
+    --primary:#3B82F6; --primary-deep:#1d5fd1; --secondary:#0EA5E9;
+    --green:#22c55e; --orange:#f97316; --purple:#a855f7; --pink:#ec4899; --gold:#eab308; --red:#ef4444;
+    --radius:15px;
+    --surface-rgb:7,11,26;
+  }
+  body.light-mode{
+    --bg-0:#f4f6fb;
+    --card:#ffffff;
+    --card-glass:rgba(255,255,255,0.75);
+    --line:rgba(15,23,42,0.08);
+    --line-strong:rgba(15,23,42,0.14);
+    --text-hi:#0f172a;
+    --text-mid:#4b5568;
+    --text-low:#8a93a6;
+    --surface-rgb:255,255,255;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-0);
+    background-image:
+      radial-gradient(50% 40% at 85% 0%, rgba(59,130,246,0.10), transparent 70%),
+      radial-gradient(40% 35% at 0% 60%, rgba(14,165,233,0.06), transparent 70%);
+    background-attachment:fixed; color:var(--text-hi); font-family:'Inter', sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; padding-bottom:78px;
+  }
+  h1,h2,h3,.brand,.btn,.section-title{font-family:'Sora', sans-serif;}
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 24px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(var(--surface-rgb),0.72);
+    backdrop-filter:blur(18px) saturate(140%); border-bottom:1px solid var(--line);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:15px 24px; max-width:1180px; margin:0 auto; }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:19px;}
+  .brand .bot{
+    width:38px; height:38px; border-radius:11px;
+    background:linear-gradient(145deg, var(--primary), var(--secondary));
+    display:flex; align-items:center; justify-content:center; font-size:17px; color:#fff;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 6px 16px rgba(59,130,246,0.35);
+  }
+  .nav-links{display:flex; gap:32px; list-style:none;}
+  .nav-links a{ font-size:14.5px; font-weight:600; color:var(--text-mid); padding:6px 2px; border-bottom:2px solid transparent; transition:color .2s, border-color .2s; }
+  .nav-links a:hover, .nav-links a.active{color:var(--text-hi); border-color:var(--primary);}
+  .icon-btn{
+    width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,0.04); border:1px solid var(--line); color:var(--text-mid); cursor:pointer; font-size:15px;
+    transition:background .2s, color .2s, transform .15s;
+  }
+  .icon-btn:hover{background:rgba(255,255,255,0.08); color:var(--text-hi);}
+  .hamburger{display:none;}
+  .mobile-menu{ display:none; flex-direction:column; border-top:1px solid var(--line); background:rgba(var(--surface-rgb),0.95); backdrop-filter:blur(18px); }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{ padding:14px 24px; font-size:14.5px; font-weight:600; color:var(--text-mid); border-bottom:1px solid var(--line); }
+
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600;
+    color:var(--text-mid); margin:28px 0 18px;
+  }
+  .back-link:hover{color:var(--text-hi);}
+
+  .article-tag{
+    display:inline-block; font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:100px;
+    background:rgba(59,130,246,0.14); color:var(--secondary); text-transform:uppercase; letter-spacing:.04em;
+    margin-bottom:16px;
+  }
+  .article-title{ font-size:32px; font-weight:800; line-height:1.25; margin-bottom:16px; }
+  .article-meta{
+    display:flex; align-items:center; gap:10px; color:var(--text-low); font-size:13px; margin-bottom:26px;
+    flex-wrap:wrap;
+  }
+  .author-avatar{
+    width:34px; height:34px; border-radius:50%;
+    background:linear-gradient(145deg, var(--primary), var(--secondary));
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; color:#fff;
+  }
+  .article-cover{
+    width:100%; height:320px; object-fit:cover; border-radius:var(--radius);
+    border:1px solid var(--line); margin-bottom:30px;
+  }
+  .article-body{ font-size:16px; color:#dbe2ee; }
+  .article-body p{ margin-bottom:20px; }
+  .article-body h2{ font-size:21px; font-weight:700; margin:32px 0 14px; }
+  .article-body ul{ margin:0 0 20px 20px; }
+  .article-body li{ margin-bottom:8px; color:#dbe2ee; }
+
+  .share-row{
+    display:flex; align-items:center; gap:12px; margin:36px 0; padding:18px 0;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .share-row span{ font-size:13px; color:var(--text-low); font-weight:600; }
+
+  .related{ margin:40px 0 20px; }
+  .related h3{ font-size:18px; font-weight:700; margin-bottom:16px; }
+  .related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .related-card{
+    background:var(--card-glass); backdrop-filter:blur(10px); border:1px solid var(--line);
+    border-radius:var(--radius); overflow:hidden; transition:transform .2s, border-color .2s;
+  }
+  .related-card:hover{transform:translateY(-4px); border-color:rgba(59,130,246,0.4);}
+  .related-thumb{ height:110px; background-size:cover; background-position:center; }
+  .related-body{ padding:12px 14px; }
+  .related-title{ font-size:13.5px; font-weight:700; }
+
+  footer.site-footer{ border-top:1px solid var(--line); padding:36px 0 24px; margin-top:20px; }
+  .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; max-width:1180px; margin:0 auto; padding:0 24px;}
+  .foot-brand{display:flex; align-items:center; gap:10px; font-weight:700;}
+  .foot-links{display:flex; gap:24px; list-style:none;}
+  .foot-links a{font-size:13.5px; color:var(--text-low);}
+  .copyright{font-size:12px; color:var(--text-low); margin-top:22px; text-align:center;}
+
+  .bottom-nav{
+    display:none; position:fixed; bottom:0; left:0; right:0; z-index:60;
+    background:rgba(var(--surface-rgb),0.9); backdrop-filter:blur(18px); border-top:1px solid var(--line);
+    box-shadow:0 -10px 30px rgba(0,0,0,0.3);
+    justify-content:space-around; padding:9px 4px 10px;
+  }
+  .bottom-nav::before{
+    content:''; position:absolute; top:0; left:12%; right:12%; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(59,130,246,0.6), transparent);
+  }
+  .bottom-nav a{
+    position:relative; display:flex; flex-direction:column; align-items:center; gap:3px;
+    font-size:10.5px; color:var(--text-low); font-weight:600;
+    transition:color .2s ease; padding:2px 4px; flex:1; min-width:0;
+  }
+  .bottom-nav a:active{ transform:scale(0.92); }
+  .nav-icon{
+    width:34px; height:26px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .25s ease, box-shadow .25s ease, transform .25s ease;
+  }
+  .bottom-nav a i{font-size:16.5px; transition:transform .2s ease;}
+  .nav-label{ white-space:nowrap; }
+  .nav-label{ transition:font-weight .2s ease, transform .2s ease; }
+  .bottom-nav a.active{color:var(--primary); font-weight:700;}
+  .bottom-nav a.active .nav-icon{
+    background:linear-gradient(145deg, rgba(59,130,246,0.18), rgba(14,165,233,0.12));
+    box-shadow:0 0 16px rgba(59,130,246,0.4), 0 0 0 1px rgba(59,130,246,0.25) inset;
+    transform:translateY(-2px);
+  }
+  .bottom-nav a.active i{ transform:scale(1.08); }
+
+  @media (max-width:960px){
+    .nav-links, .foot-links{display:none;}
+    .hamburger{display:flex;}
+    .bottom-nav{display:flex;}
+    .foot-grid{justify-content:center;}
+  }
+  @media (max-width:560px){
+    .article-title{font-size:24px;}
+    .article-cover{height:200px;}
+    .related-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 18px;}
+  }
+  a:focus-visible, button:focus-visible, .icon-btn:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+
+  /* ---------- ABOUT PAGE ---------- */
+  .about-hero{ padding:36px 0 8px; text-align:center; }
+  .about-hero .article-tag{ background:rgba(59,130,246,0.14); }
+  .about-hero h1{ margin:14px 0 12px; font-size:36px; }
+  .about-lead{ color:var(--text-mid); font-size:15.5px; max-width:560px; margin:0 auto; }
+
+  .about-section{
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 26px; margin:22px 0;
+  }
+  .about-section h2{ font-size:19px; font-weight:700; margin:14px 0 10px; }
+  .about-section p{ color:var(--text-mid); font-size:14.5px; margin-bottom:12px; }
+  .about-section p:last-child{margin-bottom:0;}
+  .about-icon-badge{
+    width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:19px;
+  }
+  .c-blue{background:rgba(59,130,246,0.14); color:var(--primary);}
+  .c-green{background:rgba(34,197,94,0.14); color:var(--green);}
+  .c-purple{background:rgba(168,85,247,0.14); color:var(--purple);}
+  .c-orange{background:rgba(249,115,22,0.14); color:var(--orange);}
+
+  .about-quote{
+    text-align:center; padding:34px 24px; margin:30px 0;
+    background:linear-gradient(120deg, rgba(59,130,246,0.1), rgba(14,165,233,0.06));
+    border:1px solid var(--line-strong); border-radius:20px;
+  }
+  .about-quote i{ color:var(--primary); font-size:22px; opacity:.6; margin-bottom:10px; }
+  .about-quote p{ font-size:17px; font-weight:600; font-style:italic; max-width:520px; margin:0 auto 10px; }
+  .about-quote span{ font-size:13px; color:var(--text-low); }
+
+  .about-cta{ text-align:center; padding:36px 20px; }
+  .about-cta h3{ font-size:20px; font-weight:700; margin-bottom:6px; }
+  .about-cta p{ color:var(--text-mid); font-size:14px; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:9px; padding:13px 22px; border-radius:var(--radius);
+    font-size:14.5px; font-weight:700; cursor:pointer; border:1px solid transparent;
+    transition:transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--primary), var(--primary-deep)); color:#fff;
+    box-shadow:0 8px 20px rgba(59,130,246,0.35);
+  }
+  .btn-primary:hover{box-shadow:0 10px 26px rgba(59,130,246,0.5);}
+  .btn-outline{ background:rgba(255,255,255,0.02); border-color:var(--line-strong); color:var(--text-mid); }
+  .btn-outline:hover{background:rgba(255,255,255,0.06); color:var(--text-hi);}
+
+  /* ---------- COMMUNITY PAGE ---------- */
+  .community-stats-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:8px 0 26px;
+  }
+  .community-stat{
+    background:var(--card-glass); backdrop-filter:blur(10px); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 14px; text-align:center;
+  }
+  .community-stat i{ font-size:20px; color:var(--primary); margin-bottom:8px; display:block; }
+  .community-stat strong{ display:block; font-size:18px; font-weight:800; font-family:'Sora',sans-serif; }
+  .community-stat span{ font-size:12px; color:var(--text-low); }
+
+  .community-guidelines{ list-style:none; }
+  .community-guidelines li{
+    position:relative; padding-left:26px; margin-bottom:12px; font-size:14.5px; color:var(--text-mid);
+  }
+  .community-guidelines li::before{
+    content:'\\f00c'; font-family:'Font Awesome 6 Free'; font-weight:900;
+    position:absolute; left:0; top:1px; color:var(--green); font-size:13px;
+  }
+
+  .giscus-wrap{ margin-top:8px; }
+  .giscus-placeholder{
+    text-align:center; padding:40px 20px; border:1px dashed var(--line-strong);
+    border-radius:var(--radius); color:var(--text-low);
+  }
+  .giscus-placeholder i{ font-size:26px; margin-bottom:10px; opacity:.5; display:block; }
+  .giscus-placeholder p{ font-size:13px; max-width:380px; margin:0 auto; }
+
+  .discussion-feed{
+    display:flex; flex-direction:row; gap:16px;
+    overflow-x:auto; padding-bottom:10px; scroll-snap-type:x proximity;
+    scrollbar-width:thin;
+  }
+  .discussion-feed::-webkit-scrollbar{ height:6px; }
+  .discussion-feed::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:100px; }
+  .discussion-card{
+    flex:0 0 300px; scroll-snap-align:start;
+    border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    background:rgba(255,255,255,0.02);
+  }
+  .discussion-q, .discussion-a{ display:flex; gap:12px; padding:16px; }
+  .discussion-q{ border-bottom:1px solid var(--line); }
+  .discussion-a{ background:rgba(59,130,246,0.05); }
+  .discussion-avatar{
+    width:36px; height:36px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(145deg, var(--purple), #7c3aed);
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:700; color:#fff;
+  }
+  .discussion-avatar.reply{ background:linear-gradient(145deg, var(--primary), var(--secondary)); }
+  .discussion-q strong, .discussion-a strong{ font-size:13.5px; font-weight:700; }
+  .discussion-cat{
+    display:inline-block; font-size:10.5px; font-weight:700; color:var(--secondary);
+    background:rgba(14,165,233,0.12); padding:2px 9px; border-radius:100px; margin:4px 0 8px;
+  }
+  .discussion-q p, .discussion-a p{ font-size:13.5px; color:var(--text-mid); margin-top:2px; }
+
+  .form-group{ margin-bottom:16px; }
+  .form-group label{
+    display:block; font-size:12.5px; font-weight:600; color:var(--text-mid); margin-bottom:6px;
+  }
+  .form-group input, .form-group textarea, .form-group select{
+    width:100%; padding:11px 14px; border-radius:12px;
+    background:rgba(255,255,255,0.04); border:1px solid var(--line-strong);
+    color:var(--text-hi); font-size:14px; font-family:'Inter',sans-serif; resize:vertical;
+  }
+  .form-group select{ appearance:none; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus{ outline:none; border-color:var(--primary); }
+  .form-group input::placeholder, .form-group textarea::placeholder{ color:var(--text-low); }
+  .form-note{ font-size:11.5px; color:var(--text-low); margin-top:12px; text-align:center; }
+
+  @media (max-width:560px){
+    .about-hero h1{font-size:27px;}
+    .about-section{padding:22px 18px;}
+    .community-stats-row{grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <button class="icon-btn hamburger" aria-label="Menu" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+      <a href="index.html" class="brand">
+        <span class="bot"><i class="fa-solid fa-robot"></i></span>
+        Hey Rahad
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="community.html" class="active">Community</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="icon-btn" aria-label="Toggle theme" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="videos.html">Videos</a>
+    <a href="blog.html">Blog</a>
+    <a href="community.html" class="active">Community</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="wrap" style="max-width:900px;">
+
+  <section class="about-hero">
+    <span class="article-tag">Join Us</span>
+    <h1 class="article-title">Community</h1>
+    <p class="about-lead">প্রশ্ন করুন, অভিজ্ঞতা শেয়ার করুন, এবং হাজারো মানুষের সাথে একসাথে শিখুন — এটা আপনার নিজের কমিউনিটি।</p>
+  </section>
+
+  <div class="community-stats-row">
+    <div class="community-stat"><i class="fa-solid fa-users"></i><div><strong>10K+</strong><span>Members</span></div></div>
+    <div class="community-stat"><i class="fa-solid fa-comments"></i><div><strong>500+</strong><span>Discussions</span></div></div>
+    <div class="community-stat"><i class="fa-solid fa-fire"></i><div><strong>Daily</strong><span>Active</span></div></div>
+  </div>
+
+  <section class="about-section">
+    <div class="about-icon-badge c-blue"><i class="fa-solid fa-shield-heart"></i></div>
+    <h2>কমিউনিটি গাইডলাইন</h2>
+    <ul class="community-guidelines">
+      <li>একে অপরের সাথে সম্মান নিয়ে কথা বলুন</li>
+      <li>স্প্যাম বা প্রোমোশনাল লিংক শেয়ার করবেন না</li>
+      <li>প্রশ্ন করার আগে দেখে নিন একই প্রশ্ন আগে হয়েছে কিনা</li>
+      <li>গঠনমূলক আলোচনা করুন, ব্যক্তিগত আক্রমণ নয়</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <div class="about-icon-badge c-purple"><i class="fa-solid fa-fire"></i></div>
+    <h2>Community Highlights</h2>
+    <p style="margin-bottom:18px;">সাম্প্রতিক আলোচনা ও প্রশ্নোত্তর — কমিউনিটি থেকে আসা সেরা প্রশ্নগুলো এখানে উত্তরসহ যুক্ত করা হয়। <span style="color:var(--text-low); font-size:12px;">(পাশে স্ক্রল করে আরও দেখুন →)</span></p>
+
+    <div class="discussion-feed">
+      <div class="discussion-card">
+        <div class="discussion-q">
+          <span class="discussion-avatar">এস</span>
+          <div>
+            <strong>শাকিল আহমেদ</strong>
+            <span class="discussion-cat">Study Smart</span>
+            <p>পরীক্ষার আগের রাতে পড়া কীভাবে দ্রুত মনে রাখা যায়?</p>
+          </div>
+        </div>
+        <div class="discussion-a">
+          <span class="discussion-avatar reply">RH</span>
+          <div>
+            <strong>Rahad</strong>
+            <p>Active Recall পদ্ধতি ব্যবহার করুন — বই বন্ধ করে নিজে থেকে মনে করার চেষ্টা করুন। এটা শুধু পড়ার চেয়ে অনেক বেশি কার্যকর।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-card">
+        <div class="discussion-q">
+          <span class="discussion-avatar">না</span>
+          <div>
+            <strong>নাদিয়া ইসলাম</strong>
+            <span class="discussion-cat">Business Growth</span>
+            <p>ছোট বাজেট নিয়ে অনলাইন বিজনেস শুরু করার সবচেয়ে ভালো উপায় কী?</p>
+          </div>
+        </div>
+        <div class="discussion-a">
+          <span class="discussion-avatar reply">RH</span>
+          <div>
+            <strong>Rahad</strong>
+            <p>প্রথমে একটা নির্দিষ্ট সমস্যা সমাধানে ফোকাস করুন, প্রোডাক্টের আগে সার্ভিস দিয়ে শুরু করুন — এতে ঝুঁকি অনেক কম থাকে।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="discussion">
+    <div class="about-icon-badge c-blue"><i class="fa-solid fa-comment-dots"></i></div>
+    <h2>Start a Discussion</h2>
+    <p style="margin-bottom:18px;">আপনার প্রশ্ন বা টপিক জমা দিন — রিভিউ করে সেরা প্রশ্নগুলো উত্তরসহ উপরে "Community Highlights"-এ যুক্ত করা হবে।</p>
+
+    <form id="communityForm">
+      <div class="form-group">
+        <label for="cm-name">নাম</label>
+        <input type="text" id="cm-name" placeholder="আপনার নাম" required>
+      </div>
+      <div class="form-group">
+        <label for="cm-topic">টপিক</label>
+        <select id="cm-topic" required>
+          <option value="" disabled selected>একটা ক্যাটাগরি বেছে নিন</option>
+          <option>Self Improvement</option>
+          <option>Study Smart</option>
+          <option>Business Growth</option>
+          <option>AI & Technology</option>
+          <option>Money & Finance</option>
+          <option>Productivity</option>
+          <option>Mindset</option>
+          <option>Life Skills</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cm-message">আপনার প্রশ্ন/টপিক</label>
+        <textarea id="cm-message" rows="4" placeholder="যা জানতে চান লিখুন..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i> প্রশ্ন জমা দিন
+      </button>
+      <p class="form-note">সাবমিট করলে ইমেইল অ্যাপ খুলে যাবে, মেসেজ প্রি-ফিল থাকবে — শুধু Send চাপলেই হবে।</p>
+    </form>
+  </section>
+
+  <section class="about-cta">
+    <h3>আরও শিখতে চান?</h3>
+    <p>ভিডিও দেখুন বা আর্টিকেল পড়ুন, তারপর এখানে ফিরে এসে আলোচনা করুন।</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px;">
+      <a href="videos.html" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> Start Learning</a>
+      <a href="blog.html" class="btn btn-outline"><i class="fa-solid fa-newspaper"></i> Read Blog</a>
+    </div>
+  </section>
+
+</div>
+
+
+
+<footer class="site-footer" id="contact">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="bot"><i class="fa-solid fa-robot"></i></span>
+      Hey Rahad
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="community.html" class="active">Community</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <p class="copyright">© 2026 Hey Rahad. All rights reserved.</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="nav-icon"><i class="fa-solid fa-house"></i></span><span class="nav-label">Home</span></a>
+  <a href="videos.html"><span class="nav-icon"><i class="fa-solid fa-video"></i></span><span class="nav-label">Videos</span></a>
+  <a href="blog.html"><span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span><span class="nav-label">Blog</span></a>
+  <a href="community.html" class="active"><span class="nav-icon"><i class="fa-solid fa-users"></i></span><span class="nav-label">Community</span></a>
+  <a href="about.html"><span class="nav-icon"><i class="fa-solid fa-circle-info"></i></span><span class="nav-label">About</span></a>
+</nav>
+
+<script>
+  const communityForm = document.getElementById('communityForm');
+  communityForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('cm-name').value.trim();
+    const topic = document.getElementById('cm-topic').value;
+    const message = document.getElementById('cm-message').value.trim();
+
+    const subject = encodeURIComponent(`Community প্রশ্ন — ${topic} — ${name}`);
+    const body = encodeURIComponent(`নাম: ${name}\nটপিক: ${topic}\n\nপ্রশ্ন:\n${message}`);
+    window.location.href = `mailto:maimulislamrahad2.0@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  const toggle = document.getElementById('themeToggle');
+  let isLight = false;
+  toggle.addEventListener('click', () => {
+    isLight = !isLight;
+    document.body.classList.toggle('light-mode', isLight);
+    toggle.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+  });
+</script>
+
+</body>
+</html>
