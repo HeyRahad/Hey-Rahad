@@ -7,6 +7,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="description" content="Hey Rahad কমিউনিটিতে যোগ দিন — প্রশ্ন করুন, আলোচনা করুন, একসাথে শিখুন।">
+<link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/community.html">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Community — Hey Rahad">
+<meta property="og:description" content="Hey Rahad কমিউনিটিতে যোগ দিন — প্রশ্ন করুন, আলোচনা করুন, একসাথে শিখুন।">
+<meta property="og:image" content="https://heyrahad.github.io/Hey-Rahad/og-image.jpg">
+<meta property="og:url" content="https://heyrahad.github.io/Hey-Rahad/community.html">
+<meta property="og:site_name" content="Hey Rahad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Community — Hey Rahad">
+<meta name="twitter:description" content="Hey Rahad কমিউনিটিতে যোগ দিন — প্রশ্ন করুন, আলোচনা করুন, একসাথে শিখুন।">
+<meta name="twitter:image" content="https://heyrahad.github.io/Hey-Rahad/og-image.jpg">
+
 <style>
   :root{
     --bg-0:#070B1A; --card:#111827; --card-glass:rgba(17,24,39,0.6);
@@ -338,6 +355,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="icon-btn" aria-label="Share" id="shareBtn"><i class="fa-solid fa-share-nodes"></i></button>
     <button class="icon-btn" aria-label="Toggle theme" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -509,6 +527,29 @@
   const mobileMenu = document.getElementById('mobileMenu');
   hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Share button — native share sheet on supported devices, clipboard copy as fallback
+  const shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const shareData = {
+        title: document.title,
+        text: 'Hey Rahad — Learn, Build, Grow. দেখে নিন:',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (err) { /* user cancelled, ignore */ }
+      } else {
+        try {
+          await navigator.clipboard.writeText(shareData.url);
+          shareBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+          setTimeout(() => { shareBtn.innerHTML = '<i class="fa-solid fa-share-nodes"></i>'; }, 1800);
+        } catch (err) {
+          alert(shareData.url);
+        }
+      }
+    });
+  }
 
   const toggle = document.getElementById('themeToggle');
   let isLight = false;
