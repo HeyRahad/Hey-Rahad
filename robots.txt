@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heyrahad.github.io/Hey-Rahad/sitemap.xml

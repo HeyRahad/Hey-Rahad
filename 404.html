@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Article — Hey Rahad</title>
+<title>Page Not Found — Hey Rahad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<meta name="description" content="Hey Rahad ব্লগের একটি আর্টিকেল — Self Improvement, Business, AI ও Study নিয়ে প্র্যাকটিক্যাল লেখা।">
-<link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/blog-post.html">
+<meta name="description" content="Hey Rahad-এর গল্প, মিশন ও ভিশন জানুন — একটি প্ল্যাটফর্ম যা শেখা, তৈরি করা ও এগিয়ে যাওয়ার জন্য।">
+<link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/about.html">
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Article — Hey Rahad">
-<meta property="og:description" content="Hey Rahad ব্লগের একটি আর্টিকেল — Self Improvement, Business, AI ও Study নিয়ে প্র্যাকটিক্যাল লেখা।">
+<meta property="og:title" content="About — Hey Rahad">
+<meta property="og:description" content="Hey Rahad-এর গল্প, মিশন ও ভিশন জানুন — একটি প্ল্যাটফর্ম যা শেখা, তৈরি করা ও এগিয়ে যাওয়ার জন্য।">
 <meta property="og:image" content="https://heyrahad.github.io/Hey-Rahad/og-image.jpg">
-<meta property="og:url" content="https://heyrahad.github.io/Hey-Rahad/blog-post.html">
+<meta property="og:url" content="https://heyrahad.github.io/Hey-Rahad/about.html">
 <meta property="og:site_name" content="Hey Rahad">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Article — Hey Rahad">
-<meta name="twitter:description" content="Hey Rahad ব্লগের একটি আর্টিকেল — Self Improvement, Business, AI ও Study নিয়ে প্র্যাকটিক্যাল লেখা।">
+<meta name="twitter:title" content="About — Hey Rahad">
+<meta name="twitter:description" content="Hey Rahad-এর গল্প, মিশন ও ভিশন জানুন — একটি প্ল্যাটফর্ম যা শেখা, তৈরি করা ও এগিয়ে যাওয়ার জন্য।">
 <meta name="twitter:image" content="https://heyrahad.github.io/Hey-Rahad/og-image.jpg">
 
 <link rel="manifest" href="manifest.json">
@@ -167,7 +167,7 @@
     border-radius:var(--radius); overflow:hidden; transition:transform .2s, border-color .2s;
   }
   .related-card:hover{transform:translateY(-4px); border-color:rgba(59,130,246,0.4);}
-  .related-thumb{ height:110px; background-size:cover; background-position:center; background-color:var(--card); }
+  .related-thumb{ height:110px; background-size:cover; background-position:center; }
   .related-body{ padding:12px 14px; }
   .related-title{ font-size:13.5px; font-weight:700; }
 
@@ -223,6 +223,112 @@
     .wrap{padding:0 18px;}
   }
   a:focus-visible, button:focus-visible, .icon-btn:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+
+  /* ---------- ABOUT PAGE ---------- */
+  .error-hero{ padding:56px 0 8px; text-align:center; }
+  .error-code{
+    font-family:'Sora',sans-serif; font-weight:800; font-size:96px; line-height:1;
+    background:linear-gradient(90deg, var(--primary), var(--secondary), var(--purple));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 20px rgba(59,130,246,0.4));
+  }
+  .error-orb{
+    width:64px; height:64px; border-radius:50%; margin:14px auto 0;
+    background:linear-gradient(150deg, var(--primary), var(--purple));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 40px rgba(59,130,246,0.45);
+    animation:errorFloat 3s ease-in-out infinite;
+  }
+  @keyframes errorFloat{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+  @media (prefers-reduced-motion: reduce){ .error-orb{ animation:none !important; } }
+
+  .quick-links-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:16px; }
+  .quick-link{
+    display:flex; align-items:center; gap:12px; padding:16px;
+    background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .quick-link:hover{ transform:translateY(-3px); border-color:rgba(59,130,246,0.4); }
+  .quick-link strong{ display:block; font-size:14px; font-weight:700; color:var(--text-hi); }
+  .quick-link small{ display:block; font-size:12px; color:var(--text-low); margin-top:2px; }
+  .ql-icon{
+    width:38px; height:38px; border-radius:11px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:15px;
+  }
+  .ql-blue{ background:rgba(59,130,246,0.14); color:var(--primary); }
+  .ql-green{ background:rgba(34,197,94,0.14); color:var(--green); }
+  .ql-purple{ background:rgba(168,85,247,0.14); color:var(--purple); }
+  .ql-orange{ background:rgba(249,115,22,0.14); color:var(--orange); }
+
+  @media (max-width:560px){
+    .error-code{ font-size:64px; }
+    .quick-links-grid{ grid-template-columns:1fr; }
+  }
+
+  .about-hero{ padding:36px 0 8px; text-align:center; }
+  .about-hero .article-tag{ background:rgba(59,130,246,0.14); }
+  .about-hero h1{ margin:14px 0 12px; font-size:36px; }
+  .about-lead{ color:var(--text-mid); font-size:15.5px; max-width:560px; margin:0 auto; }
+
+  .about-section{
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 26px; margin:22px 0;
+  }
+  .about-section h2{ font-size:19px; font-weight:700; margin:14px 0 10px; }
+  .about-section p{ color:var(--text-mid); font-size:14.5px; margin-bottom:12px; }
+  .about-section p:last-child{margin-bottom:0;}
+  .about-icon-badge{
+    width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:19px;
+  }
+  .c-blue{background:rgba(59,130,246,0.14); color:var(--primary);}
+  .c-green{background:rgba(34,197,94,0.14); color:var(--green);}
+  .c-purple{background:rgba(168,85,247,0.14); color:var(--purple);}
+  .c-orange{background:rgba(249,115,22,0.14); color:var(--orange);}
+
+  .hl{
+    color:var(--secondary); font-weight:700;
+    background:linear-gradient(180deg, transparent 65%, rgba(14,165,233,0.18) 65%);
+    padding:0 2px;
+  }
+  .story-pull{
+    margin:22px 0; padding:16px 20px; border-left:3px solid var(--primary);
+    background:rgba(59,130,246,0.06); border-radius:0 12px 12px 0;
+    font-size:16px; font-weight:700; font-style:italic; color:var(--text-hi);
+    line-height:1.5;
+  }
+
+  .about-quote{
+    text-align:center; padding:34px 24px; margin:30px 0;
+    background:linear-gradient(120deg, rgba(59,130,246,0.1), rgba(14,165,233,0.06));
+    border:1px solid var(--line-strong); border-radius:20px;
+  }
+  .about-quote i{ color:var(--primary); font-size:22px; opacity:.6; margin-bottom:10px; }
+  .about-quote p{ font-size:17px; font-weight:600; font-style:italic; max-width:520px; margin:0 auto 10px; }
+  .about-quote span{ font-size:13px; color:var(--text-low); }
+
+  .about-cta{ text-align:center; padding:36px 20px; }
+  .about-cta h3{ font-size:20px; font-weight:700; margin-bottom:6px; }
+  .about-cta p{ color:var(--text-mid); font-size:14px; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:9px; padding:13px 22px; border-radius:var(--radius);
+    font-size:14.5px; font-weight:700; cursor:pointer; border:1px solid transparent;
+    transition:transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--primary), var(--primary-deep)); color:#fff;
+    box-shadow:0 8px 20px rgba(59,130,246,0.35);
+  }
+  .btn-primary:hover{box-shadow:0 10px 26px rgba(59,130,246,0.5);}
+  .btn-outline{ background:rgba(255,255,255,0.02); border-color:var(--line-strong); color:var(--text-mid); }
+  .btn-outline:hover{background:rgba(255,255,255,0.06); color:var(--text-hi);}
+
+  @media (max-width:560px){
+    .about-hero h1{font-size:27px;}
+    .about-section{padding:22px 18px;}
+  }
 </style>
 </head>
 <body>
@@ -238,7 +344,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="videos.html">Videos</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -249,25 +355,53 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="videos.html">Videos</a>
-    <a href="blog.html" class="active">Blog</a>
+    <a href="blog.html">Blog</a>
     <a href="community.html">Community</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
 </header>
 
-<div class="wrap">
-  <a href="blog.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> সব আর্টিকেলে ফিরে যান</a>
+<div class="wrap" style="max-width:700px;">
 
-  <div id="articleContent">
-    <!-- filled by JS -->
-  </div>
+  <section class="error-hero">
+    <div class="error-code">404</div>
+    <div class="error-orb">
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none"><path d="M12 2.5l2.4 5.6L20 10.5l-5.6 2.4L12 18.5l-2.4-5.6L4 10.5l5.6-2.4L12 2.5z" fill="#fff"/></svg>
+    </div>
+    <h1 class="article-title" style="margin-top:22px;">এই পেজটা খুঁজে পাওয়া যায়নি</h1>
+    <p class="about-lead">যে পেজটা খুঁজছেন সেটা হয়তো সরে গেছে, নাম বদলেছে, অথবা লিংকে কোনো ভুল আছে। চিন্তা নেই, নিচের অপশনগুলো থেকে সঠিক জায়গায় চলে যান।</p>
 
-  <div class="related">
-    <h3>আরও পড়ুন</h3>
-    <div class="related-grid" id="relatedGrid"></div>
-  </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:26px;">
+      <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house"></i> Home-এ ফিরে যান</a>
+      <a href="videos.html" class="btn btn-outline"><i class="fa-solid fa-video"></i> Videos দেখুন</a>
+    </div>
+  </section>
+
+  <section class="about-section" style="margin-top:36px;">
+    <h2 style="margin-top:0;">আপনি হয়তো এগুলো খুঁজছিলেন</h2>
+    <div class="quick-links-grid">
+      <a href="videos.html" class="quick-link">
+        <span class="ql-icon ql-blue"><i class="fa-solid fa-video"></i></span>
+        <span><strong>Videos</strong><small>শেখার ভিডিও কনটেন্ট</small></span>
+      </a>
+      <a href="blog.html" class="quick-link">
+        <span class="ql-icon ql-green"><i class="fa-solid fa-newspaper"></i></span>
+        <span><strong>Blog</strong><small>আর্টিকেল ও লেখা</small></span>
+      </a>
+      <a href="community.html" class="quick-link">
+        <span class="ql-icon ql-purple"><i class="fa-solid fa-users"></i></span>
+        <span><strong>Community</strong><small>আলোচনা ও প্রশ্নোত্তর</small></span>
+      </a>
+      <a href="contact.html" class="quick-link">
+        <span class="ql-icon ql-orange"><i class="fa-solid fa-envelope"></i></span>
+        <span><strong>Contact</strong><small>যোগাযোগ করুন</small></span>
+      </a>
+    </div>
+  </section>
+
 </div>
+
 
 <footer class="site-footer" id="contact">
   <div class="foot-grid">
@@ -279,7 +413,7 @@
       <li><a href="videos.html">Videos</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="community.html">Community</a></li>
-        <li><a href="about.html">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -289,112 +423,12 @@
 <nav class="bottom-nav">
   <a href="index.html"><span class="nav-icon"><i class="fa-solid fa-house"></i></span><span class="nav-label">Home</span></a>
   <a href="videos.html"><span class="nav-icon"><i class="fa-solid fa-video"></i></span><span class="nav-label">Videos</span></a>
-  <a href="blog.html" class="active"><span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span><span class="nav-label">Blog</span></a>
+  <a href="blog.html"><span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span><span class="nav-label">Blog</span></a>
   <a href="community.html"><span class="nav-icon"><i class="fa-solid fa-users"></i></span><span class="nav-label">Community</span></a>
   <a href="about.html"><span class="nav-icon"><i class="fa-solid fa-circle-info"></i></span><span class="nav-label">About</span></a>
 </nav>
 
 <script>
-  // Same placeholder data as blog.html — later this should come from one shared source
-  const articles = [
-    { id:1, title:"5 Morning Habits That Change Your Life", tag:"Motivation", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=500&fit=crop",
-      body:[
-        "সকালের প্রথম এক ঘণ্টা প্রায়ই ঠিক করে দেয় বাকি দিনটা কেমন যাবে। বেশিরভাগ মানুষ ফোন হাতে নিয়ে দিন শুরু করেন, যা মনোযোগ এবং শক্তি দুটোই কমিয়ে দেয়।",
-        "নিচের অভ্যাসগুলো ছোট মনে হলেও দীর্ঘমেয়াদে বড় পার্থক্য তৈরি করে।",
-      ],
-      points:["ঘুম থেকে উঠেই ফোন না দেখা", "৫ মিনিট স্ট্রেচিং বা হাঁটাহাঁটি", "একগ্লাস পানি পান করা", "দিনের ৩টা প্রধান কাজ লিখে ফেলা"],
-      closing:"একসাথে সব পরিবর্তন করার দরকার নেই — একটা অভ্যাস দিয়ে শুরু করুন, ধীরে ধীরে যোগ করুন।"
-    },
-    { id:2, title:"How to Start a Business With Little Money", tag:"Business", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop",
-      body:["বেশিরভাগ মানুষ মনে করেন ব্যবসা শুরু করতে বড় অঙ্কের পুঁজি লাগে। বাস্তবে, সঠিক কৌশল থাকলে খুব অল্প টাকাতেও শুরু করা সম্ভব।"],
-      points:["একটা নির্দিষ্ট সমস্যা সমাধানে ফোকাস করুন", "প্রথমে সার্ভিস, পরে প্রোডাক্ট", "নিজের নেটওয়ার্ক দিয়ে প্রথম কাস্টমার পান", "লাভ থেকে পুনরায় বিনিয়োগ করুন"],
-      closing:"বড় পরিকল্পনার চেয়ে ছোট পদক্ষেপে ধারাবাহিকভাবে এগিয়ে যাওয়াই আসল।"
-    },
-    { id:3, title:"AI Tools That Will Save You Hours Every Week", tag:"AI", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&h=500&fit=crop",
-      body:["AI এখন শুধু বড় কোম্পানির জন্য নয় — প্রতিদিনের কাজেও এটা সময় বাঁচাতে পারে।"],
-      points:["লেখালেখি ও ইমেইল দ্রুত করার টুল", "নোট সামারাইজেশন", "শিডিউলিং ও প্ল্যানিং সহায়ক", "রিসার্চ দ্রুত করার টুল"],
-      closing:"AI ব্যবহার করার মূল উদ্দেশ্য সময় বাঁচানো, কাজ প্রতিস্থাপন করা নয়।"
-    },
-    { id:4, title:"The Science of Effective Studying", tag:"Study", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop",
-      body:["মুখস্থ করা আর বোঝা এক জিনিস নয়। গবেষণা বলছে, সক্রিয়ভাবে জড়িত হয়ে পড়াশোনা করলে মনে রাখার হার অনেক বেড়ে যায়।"],
-      points:["Active Recall ব্যবহার করুন", "Spaced Repetition মেনে চলুন", "নিজের ভাষায় ব্যাখ্যা করার চেষ্টা করুন", "ছোট ছোট ব্রেক নিন"],
-      closing:"পড়ার সময় নয়, পড়ার পদ্ধতিই আসল পার্থক্য তৈরি করে।"
-    },
-    { id:5, title:"From Zero to 10K Subscribers: A Success Story", tag:"Success Stories", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&h=500&fit=crop",
-      body:["প্রতিটা বড় চ্যানেলেরই একটা শূন্য থেকে শুরুর গল্প থাকে। আজকের গল্পটা তেমনই একজনের, যিনি ধারাবাহিকতা দিয়ে এগিয়েছেন।"],
-      points:["প্রথম ৬ মাস কোনো গ্রোথ ছিল না", "কনটেন্টের মান নিয়ে কাজ করা শুরু করেন", "দর্শকদের কমেন্ট থেকে শেখা", "ধারাবাহিক আপলোড শিডিউল মেনে চলা"],
-      closing:"সাফল্য একদিনে আসে না — কিন্তু সঠিক দিকে ধারাবাহিক চেষ্টা ফলাফল দেয়ই।"
-    },
-    { id:6, title:"Why Discipline Beats Motivation", tag:"Motivation", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&h=500&fit=crop",
-      body:["মোটিভেশন একটা অনুভূতি, যা আসে আর যায়। কিন্তু ডিসিপ্লিন একটা সিস্টেম, যা প্রতিদিন কাজ করে — মন চাক বা না চাক।"],
-      points:["ছোট, বাস্তবসম্মত রুটিন তৈরি করুন", "ফলাফলের চেয়ে প্রক্রিয়ায় ফোকাস করুন", "নিজের সাথে করা প্রতিশ্রুতি রাখুন"],
-      closing:"অপেক্ষা করবেন না মন চাওয়ার জন্য — শুরু করুন, মন চাওয়া পরে আসবে।"
-    }
-  ];
-
-  const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id')) || 1;
-  const article = articles.find(a => a.id === id) || articles[0];
-
-  document.title = article.title + " — Hey Rahad";
-
-  const initials = article.author.slice(0,2).toUpperCase();
-  const bodyHtml = article.body.map(p => `<p>${p}</p>`).join('');
-  const pointsHtml = article.points ? `<ul>${article.points.map(p => `<li>${p}</li>`).join('')}</ul>` : '';
-
-  document.getElementById('articleContent').innerHTML = `
-    <span class="article-tag">${article.tag}</span>
-    <h1 class="article-title">${article.title}</h1>
-    <div class="article-meta">
-      <span class="author-avatar">${initials}</span>
-      <span>${article.author}</span> • <span>${article.date}</span> • <span>${article.readTime}</span>
-    </div>
-    <img class="article-cover" src="${article.img}" alt="${article.title}" loading="lazy">
-    <div class="article-body">
-      ${bodyHtml}
-      ${pointsHtml}
-      <p>${article.closing}</p>
-    </div>
-    <div class="share-row">
-      <span>শেয়ার করুন:</span>
-      <button class="icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></button>
-      <button class="icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
-      <button class="icon-btn" aria-label="Copy link" id="copyLinkBtn"><i class="fa-solid fa-link"></i></button>
-    </div>
-  `;
-
-  const related = articles.filter(a => a.id !== article.id).slice(0, 4);
-  document.getElementById('relatedGrid').innerHTML = related.map(a => `
-    <a class="related-card" href="blog-post.html?id=${a.id}">
-      <div class="related-thumb lazy-bg" data-bg="${a.img}"></div>
-      <div class="related-body">
-        <div class="related-title">${a.title}</div>
-      </div>
-    </a>
-  `).join('');
-
-  // Lazy-load related-article thumbnails only when scrolled into view
-  if ('IntersectionObserver' in window) {
-    const lazyImgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          if (el.dataset.bg) el.style.backgroundImage = `url('${el.dataset.bg}')`;
-          lazyImgObserver.unobserve(el);
-        }
-      });
-    }, { rootMargin: '200px' });
-    document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => lazyImgObserver.observe(el));
-  } else {
-    document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
-      el.style.backgroundImage = `url('${el.dataset.bg}')`;
-    });
-  }
-
-  document.getElementById('copyLinkBtn').addEventListener('click', () => {
-    alert('লিংক কপি হয়েছে! (ডেমো)');
-  });
-
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
