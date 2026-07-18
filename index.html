@@ -236,38 +236,24 @@
   .btn-primary .fa-chevron-down{ transition:transform .25s ease; }
   .btn-primary[aria-expanded="true"] .fa-chevron-down{ transform:rotate(180deg); }
   .btn-pulse{ position:relative; }
-  .btn-pulse::after{
-    content:''; position:absolute; inset:0; border-radius:var(--radius);
-    box-shadow:0 0 0 0 rgba(59,130,246,0.55);
-    animation:pulse-ring 2.4s ease-out infinite;
-    pointer-events:none;
-  }
-  @keyframes pulse-ring{
-    0%{ box-shadow:0 0 0 0 rgba(59,130,246,0.5); }
-    70%{ box-shadow:0 0 0 12px rgba(59,130,246,0); }
-    100%{ box-shadow:0 0 0 0 rgba(59,130,246,0); }
-  }
   .btn-outline{ background:rgba(255,255,255,0.02); border-color:var(--line-strong); color:var(--text-mid); }
   .btn-outline:hover{background:rgba(255,255,255,0.06); color:var(--text-hi);}
 
   .btn-ai{
     position:relative; color:#fff; overflow:hidden;
     background:linear-gradient(135deg, var(--purple), var(--primary) 55%, var(--secondary));
-    background-size:200% 200%;
-    animation:ai-gradient 4s ease infinite;
     box-shadow:0 10px 26px rgba(168,85,247,0.4), 0 0 0 1px rgba(255,255,255,0.12) inset;
     transition:transform .18s ease, box-shadow .25s ease;
   }
-  .btn-ai i{ animation:sparkle-spin 3.5s ease-in-out infinite; }
+  .btn-ai i{ transition:transform .3s ease; }
+  .btn-ai:hover i{ transform:rotate(14deg) scale(1.15); }
   .btn-ai::before{
     content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
     background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
     transform:skewX(-20deg);
-    animation:ai-shine 3s ease-in-out infinite;
+    transition:left .5s ease;
   }
-  @keyframes ai-gradient{ 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
-  @keyframes ai-shine{ 0%{left:-60%;} 55%{left:120%;} 100%{left:120%;} }
-  @keyframes sparkle-spin{ 0%,100%{transform:rotate(0deg) scale(1);} 50%{transform:rotate(14deg) scale(1.15);} }
+  .btn-ai:hover::before{ left:120%; }
   .btn-ai:hover{
     box-shadow:0 16px 36px rgba(168,85,247,0.55), 0 0 0 1px rgba(255,255,255,0.18) inset;
     transform:translateY(-2px);
