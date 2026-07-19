@@ -6,7 +6,10 @@
 <title>All Videos — Hey Rahad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
 <meta name="description" content="Self Improvement, Study, Business, AI ও আরও অনেক বিষয়ে ভিডিও দেখুন — ক্যাটাগরি অনুযায়ী খুঁজে নিন।">
 <link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/videos.html">
 
@@ -39,6 +42,19 @@
   ]
 }
 </script>
+<!-- ============================================================
+     GOOGLE ANALYTICS (GA4) — সম্পূর্ণ ফ্রি
+     analytics.google.com থেকে পাওয়া আপনার আসল Measurement ID
+     দিয়ে নিচের "G-0X4HLGQ8XY" (দুই জায়গায়) বদলে দিন
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0X4HLGQ8XY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0X4HLGQ8XY');
+</script>
+
 <style>
   :root{
     --bg-0:#070B1A;
@@ -424,15 +440,15 @@
   // ---- Placeholder video data (replace youtubeId with real YouTube video IDs later) ----
   const DEMO_YT_ID = "aqz-KE-bpKQ"; // temporary demo video, swap per-item youtubeId with real IDs
   const videos = [
-    { id:1, title:"How to Focus on Study for Long Time", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:2, title:"Build Unstoppable Habits", cat:"self", tag:"Self Improvement", tagClass:"tag-self", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:3, title:"AI Tools Every Student Should Use", cat:"ai", tag:"AI & Technology", tagClass:"tag-ai", views:"8.4K", time:"5 days ago", img:"https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:4, title:"Start a Business With Zero Capital", cat:"business", tag:"Business Growth", tagClass:"tag-business", views:"15K", time:"1 week ago", img:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:5, title:"Saving Money as a Student", cat:"money", tag:"Money & Finance", tagClass:"tag-money", views:"6.2K", time:"3 days ago", img:"https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:6, title:"Deep Work: Get More Done", cat:"productivity", tag:"Productivity", tagClass:"tag-productivity", views:"9.8K", time:"4 days ago", img:"https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:7, title:"Rewire Your Mindset for Success", cat:"mindset", tag:"Mindset", tagClass:"tag-mindset", views:"11K", time:"6 days ago", img:"https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:8, title:"Everyday Life Skills Nobody Teaches You", cat:"life", tag:"Life Skills", tagClass:"tag-life", views:"7.1K", time:"1 week ago", img:"https://images.unsplash.com/photo-1519222970733-f546218fa6d7?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID },
-    { id:9, title:"How I Study for Exams Efficiently", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"10K", time:"2 weeks ago", img:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop", youtubeId:DEMO_YT_ID }
+    { id:1, title:"How to Focus on Study for Long Time", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:2, title:"Build Unstoppable Habits", cat:"self", tag:"Self Improvement", tagClass:"tag-self", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:3, title:"AI Tools Every Student Should Use", cat:"ai", tag:"AI & Technology", tagClass:"tag-ai", views:"8.4K", time:"5 days ago", img:"https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:4, title:"Start a Business With Zero Capital", cat:"business", tag:"Business Growth", tagClass:"tag-business", views:"15K", time:"1 week ago", img:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:5, title:"Saving Money as a Student", cat:"money", tag:"Money & Finance", tagClass:"tag-money", views:"6.2K", time:"3 days ago", img:"https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:6, title:"Deep Work: Get More Done", cat:"productivity", tag:"Productivity", tagClass:"tag-productivity", views:"9.8K", time:"4 days ago", img:"https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:7, title:"Rewire Your Mindset for Success", cat:"mindset", tag:"Mindset", tagClass:"tag-mindset", views:"11K", time:"6 days ago", img:"https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:8, title:"Everyday Life Skills Nobody Teaches You", cat:"life", tag:"Life Skills", tagClass:"tag-life", views:"7.1K", time:"1 week ago", img:"https://images.unsplash.com/photo-1519222970733-f546218fa6d7?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
+    { id:9, title:"How I Study for Exams Efficiently", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"10K", time:"2 weeks ago", img:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID }
   ];
 
   const grid = document.getElementById('videoGrid');

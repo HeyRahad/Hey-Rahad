@@ -6,7 +6,10 @@
 <title>Article — Hey Rahad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
 <meta name="description" content="Hey Rahad ব্লগের একটি আর্টিকেল — Self Improvement, Business, AI ও Study নিয়ে প্র্যাকটিক্যাল লেখা।">
 <link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/blog-post.html">
 
@@ -39,6 +42,19 @@
   ]
 }
 </script>
+<!-- ============================================================
+     GOOGLE ANALYTICS (GA4) — সম্পূর্ণ ফ্রি
+     analytics.google.com থেকে পাওয়া আপনার আসল Measurement ID
+     দিয়ে নিচের "G-0X4HLGQ8XY" (দুই জায়গায়) বদলে দিন
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0X4HLGQ8XY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0X4HLGQ8XY');
+</script>
+
 <style>
   :root{
     --bg-0:#070B1A; --card:#111827; --card-glass:rgba(17,24,39,0.6);
@@ -297,7 +313,7 @@
 <script>
   // Same placeholder data as blog.html — later this should come from one shared source
   const articles = [
-    { id:1, title:"5 Morning Habits That Change Your Life", tag:"Motivation", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=500&fit=crop",
+    { id:1, title:"5 Morning Habits That Change Your Life", tag:"Motivation", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=500&fit=crop&q=65&auto=format",
       body:[
         "সকালের প্রথম এক ঘণ্টা প্রায়ই ঠিক করে দেয় বাকি দিনটা কেমন যাবে। বেশিরভাগ মানুষ ফোন হাতে নিয়ে দিন শুরু করেন, যা মনোযোগ এবং শক্তি দুটোই কমিয়ে দেয়।",
         "নিচের অভ্যাসগুলো ছোট মনে হলেও দীর্ঘমেয়াদে বড় পার্থক্য তৈরি করে।",
@@ -305,27 +321,27 @@
       points:["ঘুম থেকে উঠেই ফোন না দেখা", "৫ মিনিট স্ট্রেচিং বা হাঁটাহাঁটি", "একগ্লাস পানি পান করা", "দিনের ৩টা প্রধান কাজ লিখে ফেলা"],
       closing:"একসাথে সব পরিবর্তন করার দরকার নেই — একটা অভ্যাস দিয়ে শুরু করুন, ধীরে ধীরে যোগ করুন।"
     },
-    { id:2, title:"How to Start a Business With Little Money", tag:"Business", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop",
+    { id:2, title:"How to Start a Business With Little Money", tag:"Business", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop&q=65&auto=format",
       body:["বেশিরভাগ মানুষ মনে করেন ব্যবসা শুরু করতে বড় অঙ্কের পুঁজি লাগে। বাস্তবে, সঠিক কৌশল থাকলে খুব অল্প টাকাতেও শুরু করা সম্ভব।"],
       points:["একটা নির্দিষ্ট সমস্যা সমাধানে ফোকাস করুন", "প্রথমে সার্ভিস, পরে প্রোডাক্ট", "নিজের নেটওয়ার্ক দিয়ে প্রথম কাস্টমার পান", "লাভ থেকে পুনরায় বিনিয়োগ করুন"],
       closing:"বড় পরিকল্পনার চেয়ে ছোট পদক্ষেপে ধারাবাহিকভাবে এগিয়ে যাওয়াই আসল।"
     },
-    { id:3, title:"AI Tools That Will Save You Hours Every Week", tag:"AI", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&h=500&fit=crop",
+    { id:3, title:"AI Tools That Will Save You Hours Every Week", tag:"AI", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&h=500&fit=crop&q=65&auto=format",
       body:["AI এখন শুধু বড় কোম্পানির জন্য নয় — প্রতিদিনের কাজেও এটা সময় বাঁচাতে পারে।"],
       points:["লেখালেখি ও ইমেইল দ্রুত করার টুল", "নোট সামারাইজেশন", "শিডিউলিং ও প্ল্যানিং সহায়ক", "রিসার্চ দ্রুত করার টুল"],
       closing:"AI ব্যবহার করার মূল উদ্দেশ্য সময় বাঁচানো, কাজ প্রতিস্থাপন করা নয়।"
     },
-    { id:4, title:"The Science of Effective Studying", tag:"Study", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop",
+    { id:4, title:"The Science of Effective Studying", tag:"Study", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop&q=65&auto=format",
       body:["মুখস্থ করা আর বোঝা এক জিনিস নয়। গবেষণা বলছে, সক্রিয়ভাবে জড়িত হয়ে পড়াশোনা করলে মনে রাখার হার অনেক বেড়ে যায়।"],
       points:["Active Recall ব্যবহার করুন", "Spaced Repetition মেনে চলুন", "নিজের ভাষায় ব্যাখ্যা করার চেষ্টা করুন", "ছোট ছোট ব্রেক নিন"],
       closing:"পড়ার সময় নয়, পড়ার পদ্ধতিই আসল পার্থক্য তৈরি করে।"
     },
-    { id:5, title:"From Zero to 10K Subscribers: A Success Story", tag:"Success Stories", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&h=500&fit=crop",
+    { id:5, title:"From Zero to 10K Subscribers: A Success Story", tag:"Success Stories", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&h=500&fit=crop&q=65&auto=format",
       body:["প্রতিটা বড় চ্যানেলেরই একটা শূন্য থেকে শুরুর গল্প থাকে। আজকের গল্পটা তেমনই একজনের, যিনি ধারাবাহিকতা দিয়ে এগিয়েছেন।"],
       points:["প্রথম ৬ মাস কোনো গ্রোথ ছিল না", "কনটেন্টের মান নিয়ে কাজ করা শুরু করেন", "দর্শকদের কমেন্ট থেকে শেখা", "ধারাবাহিক আপলোড শিডিউল মেনে চলা"],
       closing:"সাফল্য একদিনে আসে না — কিন্তু সঠিক দিকে ধারাবাহিক চেষ্টা ফলাফল দেয়ই।"
     },
-    { id:6, title:"Why Discipline Beats Motivation", tag:"Motivation", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&h=500&fit=crop",
+    { id:6, title:"Why Discipline Beats Motivation", tag:"Motivation", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&h=500&fit=crop&q=65&auto=format",
       body:["মোটিভেশন একটা অনুভূতি, যা আসে আর যায়। কিন্তু ডিসিপ্লিন একটা সিস্টেম, যা প্রতিদিন কাজ করে — মন চাক বা না চাক।"],
       points:["ছোট, বাস্তবসম্মত রুটিন তৈরি করুন", "ফলাফলের চেয়ে প্রক্রিয়ায় ফোকাস করুন", "নিজের সাথে করা প্রতিশ্রুতি রাখুন"],
       closing:"অপেক্ষা করবেন না মন চাওয়ার জন্য — শুরু করুন, মন চাওয়া পরে আসবে।"

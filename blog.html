@@ -6,7 +6,10 @@
 <title>Blog — Hey Rahad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
 <meta name="description" content="Motivation, Business, AI, Study এবং Success Stories নিয়ে প্রফেশনাল আর্টিকেল পড়ুন।">
 <link rel="canonical" href="https://heyrahad.github.io/Hey-Rahad/blog.html">
 
@@ -23,6 +26,34 @@
 <meta name="twitter:title" content="Blog — Hey Rahad">
 <meta name="twitter:description" content="Motivation, Business, AI, Study এবং Success Stories নিয়ে প্রফেশনাল আর্টিকেল পড়ুন।">
 <meta name="twitter:image" content="https://heyrahad.github.io/Hey-Rahad/og-image.jpg">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3B82F6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Hey Rahad",
+  "url": "https://heyrahad.github.io/Hey-Rahad/index.html",
+  "logo": "https://heyrahad.github.io/Hey-Rahad/favicon-512.png",
+  "description": "Videos, articles ও AI-powered guidance for Self Improvement, Study, Business ও AI.",
+  "sameAs": [
+    "https://youtube.com/@heyrahad"
+  ]
+}
+</script>
+<!-- ============================================================
+     GOOGLE ANALYTICS (GA4) — সম্পূর্ণ ফ্রি
+     analytics.google.com থেকে পাওয়া আপনার আসল Measurement ID
+     দিয়ে নিচের "G-0X4HLGQ8XY" (দুই জায়গায়) বদলে দিন
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0X4HLGQ8XY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0X4HLGQ8XY');
+</script>
 
 <style>
   :root{
@@ -371,12 +402,12 @@
 <script>
   // ---- Placeholder article data (replace later with real articles) ----
   const articles = [
-    { id:1, title:"5 Morning Habits That Change Your Life", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"সকালের ছোট কিছু অভ্যাস কীভাবে সারাদিনের প্রোডাক্টিভিটি ও মানসিক অবস্থা বদলে দিতে পারে।", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=300&fit=crop" },
-    { id:2, title:"How to Start a Business With Little Money", cat:"business", tag:"Business", tagClass:"tag-business", excerpt:"অল্প পুঁজিতেও কীভাবে একটা টেকসই ব্যবসা শুরু করা যায় — বাস্তব উদাহরণসহ।", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop" },
-    { id:3, title:"AI Tools That Will Save You Hours Every Week", cat:"ai", tag:"AI", tagClass:"tag-ai", excerpt:"প্রতিদিনের কাজে ব্যবহার করার মতো কিছু কার্যকর AI টুল এবং সেগুলোর ব্যবহারবিধি।", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&h=300&fit=crop" },
-    { id:4, title:"The Science of Effective Studying", cat:"study", tag:"Study", tagClass:"tag-study", readTimeIcon:"", excerpt:"মুখস্থ না করে কীভাবে সত্যিকারের বুঝে পড়াশোনা করবেন — গবেষণাভিত্তিক কিছু টেকনিক।", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop" },
-    { id:5, title:"From Zero to 10K Subscribers: A Success Story", cat:"success", tag:"Success Stories", tagClass:"tag-self", excerpt:"একজন সাধারণ শিক্ষার্থীর ইউটিউব যাত্রার গল্প — কী কী ভুল থেকে তিনি শিখেছেন।", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=300&fit=crop" },
-    { id:6, title:"Why Discipline Beats Motivation", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"মোটিভেশন সাময়িক, কিন্তু ডিসিপ্লিন দীর্ঘমেয়াদী ফলাফল দেয় — কেন এবং কীভাবে গড়বেন।", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=300&fit=crop" }
+    { id:1, title:"5 Morning Habits That Change Your Life", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"সকালের ছোট কিছু অভ্যাস কীভাবে সারাদিনের প্রোডাক্টিভিটি ও মানসিক অবস্থা বদলে দিতে পারে।", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=300&fit=crop&q=65&auto=format" },
+    { id:2, title:"How to Start a Business With Little Money", cat:"business", tag:"Business", tagClass:"tag-business", excerpt:"অল্প পুঁজিতেও কীভাবে একটা টেকসই ব্যবসা শুরু করা যায় — বাস্তব উদাহরণসহ।", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&q=65&auto=format" },
+    { id:3, title:"AI Tools That Will Save You Hours Every Week", cat:"ai", tag:"AI", tagClass:"tag-ai", excerpt:"প্রতিদিনের কাজে ব্যবহার করার মতো কিছু কার্যকর AI টুল এবং সেগুলোর ব্যবহারবিধি।", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&h=300&fit=crop&q=65&auto=format" },
+    { id:4, title:"The Science of Effective Studying", cat:"study", tag:"Study", tagClass:"tag-study", readTimeIcon:"", excerpt:"মুখস্থ না করে কীভাবে সত্যিকারের বুঝে পড়াশোনা করবেন — গবেষণাভিত্তিক কিছু টেকনিক।", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&q=65&auto=format" },
+    { id:5, title:"From Zero to 10K Subscribers: A Success Story", cat:"success", tag:"Success Stories", tagClass:"tag-self", excerpt:"একজন সাধারণ শিক্ষার্থীর ইউটিউব যাত্রার গল্প — কী কী ভুল থেকে তিনি শিখেছেন।", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=300&fit=crop&q=65&auto=format" },
+    { id:6, title:"Why Discipline Beats Motivation", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"মোটিভেশন সাময়িক, কিন্তু ডিসিপ্লিন দীর্ঘমেয়াদী ফলাফল দেয় — কেন এবং কীভাবে গড়বেন।", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=300&fit=crop&q=65&auto=format" }
   ];
 
   const grid = document.getElementById('videoGrid');
