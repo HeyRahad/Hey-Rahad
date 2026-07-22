@@ -194,6 +194,18 @@
 
   /* ---------- VIDEO GRID ---------- */
   .result-count{ font-size:13px; color:var(--text-low); margin-bottom:16px; }
+  .coming-soon-card{
+    text-align:center; padding:56px 24px;
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .cs-icon{
+    width:64px; height:64px; margin:0 auto 18px; border-radius:18px;
+    background:rgba(59,130,246,0.14); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .coming-soon-card h3{ font-size:19px; font-weight:700; margin-bottom:8px; }
+  .coming-soon-card p{ font-size:13.5px; color:var(--text-low); max-width:420px; margin:0 auto 22px; line-height:1.6; }
   .video-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding-bottom:40px; }
   .video-card{
     background:var(--card-glass); backdrop-filter:blur(10px);
@@ -361,11 +373,17 @@
     </div>
   </div>
 
-  <p class="result-count" id="resultCount">সব আর্টিকেল দেখানো হচ্ছে</p>
+  <p class="result-count" id="resultCount"></p>
   <div class="video-grid" id="videoGrid"></div>
   <div class="empty-state" id="emptyState">
-    <i class="fa-solid fa-newspaper"></i>
-    <p>কোনো আর্টিকেল পাওয়া যায়নি</p>
+    <div class="coming-soon-card">
+      <div class="cs-icon"><i class="fa-solid fa-pen-nib"></i></div>
+      <h3>প্রথম আর্টিকেল আসছে শীঘ্রই</h3>
+      <p>এখনো কোনো আর্টিকেল প্রকাশিত হয়নি — লেখার কাজ চলছে। নতুন আর্টিকেল প্রকাশ হলে জানতে Community-তে যোগ দিন অথবা YouTube চ্যানেলে চোখ রাখুন।</p>
+      <a href="https://youtube.com/@heyrahad?si=Ebu-x5-Qje5a1d7A" target="_blank" rel="noopener" class="btn btn-primary">
+        <i class="fa-brands fa-youtube"></i> চ্যানেল সাবস্ক্রাইব করুন
+      </a>
+    </div>
   </div>
 </section>
 
@@ -402,12 +420,7 @@
 <script>
   // ---- Placeholder article data (replace later with real articles) ----
   const articles = [
-    { id:1, title:"5 Morning Habits That Change Your Life", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"সকালের ছোট কিছু অভ্যাস কীভাবে সারাদিনের প্রোডাক্টিভিটি ও মানসিক অবস্থা বদলে দিতে পারে।", author:"Rahad", date:"3 days ago", readTime:"4 min read", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=300&fit=crop&q=65&auto=format" },
-    { id:2, title:"How to Start a Business With Little Money", cat:"business", tag:"Business", tagClass:"tag-business", excerpt:"অল্প পুঁজিতেও কীভাবে একটা টেকসই ব্যবসা শুরু করা যায় — বাস্তব উদাহরণসহ।", author:"Rahad", date:"5 days ago", readTime:"6 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&q=65&auto=format" },
-    { id:3, title:"AI Tools That Will Save You Hours Every Week", cat:"ai", tag:"AI", tagClass:"tag-ai", excerpt:"প্রতিদিনের কাজে ব্যবহার করার মতো কিছু কার্যকর AI টুল এবং সেগুলোর ব্যবহারবিধি।", author:"Rahad", date:"1 week ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&h=300&fit=crop&q=65&auto=format" },
-    { id:4, title:"The Science of Effective Studying", cat:"study", tag:"Study", tagClass:"tag-study", readTimeIcon:"", excerpt:"মুখস্থ না করে কীভাবে সত্যিকারের বুঝে পড়াশোনা করবেন — গবেষণাভিত্তিক কিছু টেকনিক।", author:"Rahad", date:"2 weeks ago", readTime:"7 min read", img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&q=65&auto=format" },
-    { id:5, title:"From Zero to 10K Subscribers: A Success Story", cat:"success", tag:"Success Stories", tagClass:"tag-self", excerpt:"একজন সাধারণ শিক্ষার্থীর ইউটিউব যাত্রার গল্প — কী কী ভুল থেকে তিনি শিখেছেন।", author:"Rahad", date:"3 weeks ago", readTime:"8 min read", img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=300&fit=crop&q=65&auto=format" },
-    { id:6, title:"Why Discipline Beats Motivation", cat:"motivation", tag:"Motivation", tagClass:"tag-mindset", excerpt:"মোটিভেশন সাময়িক, কিন্তু ডিসিপ্লিন দীর্ঘমেয়াদী ফলাফল দেয় — কেন এবং কীভাবে গড়বেন।", author:"Rahad", date:"1 month ago", readTime:"5 min read", img:"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=300&fit=crop&q=65&auto=format" }
+    // { id:1, title:"Article Title Here", cat:"study", tag:"Study", tagClass:"tag-study", excerpt:"Short summary...", author:"Rahad", date:"just now", readTime:"5 min read", img:"https://your-cover-image.jpg" },
   ];
 
   const grid = document.getElementById('videoGrid');

@@ -492,6 +492,7 @@
   .stat-card i{font-size:17px; color:var(--secondary); transition:transform .25s ease;}
   .stat-card:hover i{ transform:scale(1.2); }
   .stat-num{font-size:17px; font-weight:800; font-family:'Sora',sans-serif; line-height:1;}
+  .stat-num.stat-soon{ font-size:12.5px; color:var(--secondary); white-space:nowrap; }
   .stat-label{font-size:12px; color:var(--text-low); margin-top:2px;}
 
   /* ---------- SECTIONS ---------- */
@@ -546,6 +547,19 @@
 
   /* Videos */
   .video-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+
+  .coming-soon-card{
+    text-align:center; padding:56px 24px;
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .cs-icon{
+    width:64px; height:64px; margin:0 auto 18px; border-radius:18px;
+    background:rgba(59,130,246,0.14); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .coming-soon-card h3{ font-size:19px; font-weight:700; margin-bottom:8px; }
+  .coming-soon-card p{ font-size:13.5px; color:var(--text-low); max-width:420px; margin:0 auto 22px; line-height:1.6; }
   .video-card{
     position:relative;
     background:var(--card-glass); backdrop-filter:blur(10px);
@@ -839,15 +853,15 @@
       <div class="stats">
         <div class="stat-card">
           <i class="fa-solid fa-video"></i>
-          <div><div class="stat-num">50+</div><div class="stat-label">Videos</div></div>
+          <div><div class="stat-num stat-soon">Coming Soon</div><div class="stat-label">Videos</div></div>
         </div>
         <div class="stat-card">
           <i class="fa-solid fa-file-lines"></i>
-          <div><div class="stat-num">20+</div><div class="stat-label">Articles</div></div>
+          <div><div class="stat-num stat-soon">Coming Soon</div><div class="stat-label">Articles</div></div>
         </div>
         <div class="stat-card">
           <i class="fa-solid fa-users"></i>
-          <div><div class="stat-num">10K+</div><div class="stat-label">Community</div></div>
+          <div><div class="stat-num stat-soon">Just Launched</div><div class="stat-label">Community</div></div>
         </div>
       </div>
     </div>
@@ -966,37 +980,13 @@
       </div>
       <a href="videos.html" class="view-all">View all <i class="fa-solid fa-arrow-right"></i></a>
     </div>
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="thumb watch-trigger" data-yt="aqz-KE-bpKQ" data-title="How to Focus on Study for Long Time" style="background-image:url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop&q=65&auto=format')">
-          <span class="thumb-tag">New</span>
-          <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-        </div>
-        <div class="video-body">
-          <div class="video-title watch-trigger" data-yt="aqz-KE-bpKQ" data-title="How to Focus on Study for Long Time" style="cursor:pointer;">How to Focus on Study for Long Time <i class="fa-solid fa-circle-check verified"></i></div>
-          <div class="video-meta">12K views • 2 days ago</div>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="thumb watch-trigger" data-yt="aqz-KE-bpKQ" data-title="Build Unstoppable Habits" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=250&fit=crop&q=65&auto=format')">
-          <span class="thumb-tag done">Completed</span>
-          <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-        </div>
-        <div class="video-body">
-          <div class="video-title watch-trigger" data-yt="aqz-KE-bpKQ" data-title="Build Unstoppable Habits" style="cursor:pointer;">Build Unstoppable Habits <i class="fa-solid fa-circle-check verified"></i></div>
-          <div class="video-meta"><span class="status">Completed</span> • 12K views • 2 days ago</div>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="thumb watch-trigger" data-yt="aqz-KE-bpKQ" data-title="AI Tools Every Student Should Use" style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop&q=65&auto=format')">
-          <span class="thumb-tag">New</span>
-          <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-        </div>
-        <div class="video-body">
-          <div class="video-title watch-trigger" data-yt="aqz-KE-bpKQ" data-title="AI Tools Every Student Should Use" style="cursor:pointer;">AI Tools Every Student Should Use <i class="fa-solid fa-circle-check verified"></i></div>
-          <div class="video-meta">8.4K views • 5 days ago</div>
-        </div>
-      </div>
+    <div class="coming-soon-card">
+      <div class="cs-icon"><i class="fa-solid fa-clapperboard"></i></div>
+      <h3>প্রথম ভিডিও আসছে শীঘ্রই</h3>
+      <p>এখনো কোনো ভিডিও আপলোড হয়নি — কিন্তু কাজ চলছে। প্রথম ভিডিওটা মিস করতে না চাইলে YouTube চ্যানেলে সাবস্ক্রাইব করে রাখুন।</p>
+      <a href="https://youtube.com/@heyrahad?si=Ebu-x5-Qje5a1d7A" target="_blank" rel="noopener" class="btn btn-primary">
+        <i class="fa-brands fa-youtube"></i> চ্যানেল সাবস্ক্রাইব করুন
+      </a>
     </div>
   </div>
 </section>

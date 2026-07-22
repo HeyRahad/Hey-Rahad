@@ -262,6 +262,19 @@
   .c-purple{background:rgba(168,85,247,0.14); color:var(--purple);}
   .c-orange{background:rgba(249,115,22,0.14); color:var(--orange);}
 
+  .coming-soon-card{
+    text-align:center; padding:56px 24px;
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .cs-icon{
+    width:64px; height:64px; margin:0 auto 18px; border-radius:18px;
+    background:rgba(59,130,246,0.14); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .coming-soon-card h3{ font-size:19px; font-weight:700; margin-bottom:8px; }
+  .coming-soon-card p{ font-size:13.5px; color:var(--text-low); max-width:420px; margin:0 auto 22px; line-height:1.6; }
+
   .about-quote{
     text-align:center; padding:34px 24px; margin:30px 0;
     background:linear-gradient(120deg, rgba(59,130,246,0.1), rgba(14,165,233,0.06));
@@ -408,9 +421,9 @@
   </section>
 
   <div class="community-stats-row">
-    <div class="community-stat"><i class="fa-solid fa-users"></i><div><strong>10K+</strong><span>Members</span></div></div>
-    <div class="community-stat"><i class="fa-solid fa-comments"></i><div><strong>500+</strong><span>Discussions</span></div></div>
-    <div class="community-stat"><i class="fa-solid fa-fire"></i><div><strong>Daily</strong><span>Active</span></div></div>
+    <div class="community-stat"><i class="fa-solid fa-users"></i><div><strong>New</strong><span>Community</span></div></div>
+    <div class="community-stat"><i class="fa-solid fa-comments"></i><div><strong>0</strong><span>Discussions</span></div></div>
+    <div class="community-stat"><i class="fa-solid fa-seedling"></i><div><strong>Just Started</strong><span>Be an Early Member</span></div></div>
   </div>
 
   <section class="about-section">
@@ -427,44 +440,12 @@
   <section class="about-section">
     <div class="about-icon-badge c-purple"><i class="fa-solid fa-fire"></i></div>
     <h2>Community Highlights</h2>
-    <p style="margin-bottom:18px;">সাম্প্রতিক আলোচনা ও প্রশ্নোত্তর — কমিউনিটি থেকে আসা সেরা প্রশ্নগুলো এখানে উত্তরসহ যুক্ত করা হয়। <span style="color:var(--text-low); font-size:12px;">(পাশে স্ক্রল করে আরও দেখুন →)</span></p>
+    <p style="margin-bottom:18px;">এখানে কমিউনিটির সেরা প্রশ্ন ও উত্তর দেখানো হবে — নিচে প্রশ্ন জমা দিন, আপনারটাই হতে পারে এখানকার প্রথম আলোচনা।</p>
 
-    <div class="discussion-feed">
-      <div class="discussion-card">
-        <div class="discussion-q">
-          <span class="discussion-avatar">এস</span>
-          <div>
-            <strong>শাকিল আহমেদ</strong>
-            <span class="discussion-cat">Study Smart</span>
-            <p>পরীক্ষার আগের রাতে পড়া কীভাবে দ্রুত মনে রাখা যায়?</p>
-          </div>
-        </div>
-        <div class="discussion-a">
-          <span class="discussion-avatar reply">RH</span>
-          <div>
-            <strong>Rahad</strong>
-            <p>Active Recall পদ্ধতি ব্যবহার করুন — বই বন্ধ করে নিজে থেকে মনে করার চেষ্টা করুন। এটা শুধু পড়ার চেয়ে অনেক বেশি কার্যকর।</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="discussion-card">
-        <div class="discussion-q">
-          <span class="discussion-avatar">না</span>
-          <div>
-            <strong>নাদিয়া ইসলাম</strong>
-            <span class="discussion-cat">Business Growth</span>
-            <p>ছোট বাজেট নিয়ে অনলাইন বিজনেস শুরু করার সবচেয়ে ভালো উপায় কী?</p>
-          </div>
-        </div>
-        <div class="discussion-a">
-          <span class="discussion-avatar reply">RH</span>
-          <div>
-            <strong>Rahad</strong>
-            <p>প্রথমে একটা নির্দিষ্ট সমস্যা সমাধানে ফোকাস করুন, প্রোডাক্টের আগে সার্ভিস দিয়ে শুরু করুন — এতে ঝুঁকি অনেক কম থাকে।</p>
-          </div>
-        </div>
-      </div>
+    <div class="coming-soon-card">
+      <div class="cs-icon"><i class="fa-solid fa-comments"></i></div>
+      <h3>এখনো কোনো আলোচনা শুরু হয়নি</h3>
+      <p>প্রথম প্রশ্নটা আপনারই হোক। নিচের ফর্ম দিয়ে জমা দিন — ভালো প্রশ্ন হলে উত্তরসহ এখানেই প্রকাশ করা হবে।</p>
     </div>
   </section>
 

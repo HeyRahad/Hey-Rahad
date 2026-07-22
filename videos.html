@@ -194,6 +194,18 @@
 
   /* ---------- VIDEO GRID ---------- */
   .result-count{ font-size:13px; color:var(--text-low); margin-bottom:16px; }
+  .coming-soon-card{
+    text-align:center; padding:56px 24px;
+    background:var(--card-glass); backdrop-filter:blur(10px);
+    border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .cs-icon{
+    width:64px; height:64px; margin:0 auto 18px; border-radius:18px;
+    background:rgba(59,130,246,0.14); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .coming-soon-card h3{ font-size:19px; font-weight:700; margin-bottom:8px; }
+  .coming-soon-card p{ font-size:13.5px; color:var(--text-low); max-width:420px; margin:0 auto 22px; line-height:1.6; }
   .video-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding-bottom:40px; }
   .video-card{
     background:var(--card-glass); backdrop-filter:blur(10px);
@@ -233,6 +245,18 @@
   .action-btn.share-btn:active{ color:var(--primary); background:rgba(59,130,246,0.12); }
 
   .empty-state{ text-align:center; padding:60px 20px; color:var(--text-low); display:none; }
+  .empty-state p{ font-size:13.5px; max-width:400px; margin:0 auto; line-height:1.6; }
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:12px 20px; border-radius:var(--radius); font-size:14px; font-weight:700;
+    cursor:pointer; border:1px solid transparent; transition:transform .18s ease, box-shadow .25s ease;
+  }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--primary), var(--primary-deep)); color:#fff;
+    box-shadow:0 10px 24px rgba(59,130,246,0.4);
+  }
+  .btn-primary:hover{ box-shadow:0 14px 32px rgba(59,130,246,0.55); transform:translateY(-2px); }
   .empty-state i{font-size:34px; margin-bottom:12px; opacity:.5;}
 
   /* ---------- CATEGORY COLORS FOR TAGS ---------- */
@@ -384,11 +408,15 @@
     </div>
   </div>
 
-  <p class="result-count" id="resultCount">সব ভিডিও দেখানো হচ্ছে</p>
+  <p class="result-count" id="resultCount"></p>
   <div class="video-grid" id="videoGrid"></div>
   <div class="empty-state" id="emptyState">
-    <i class="fa-solid fa-video-slash"></i>
-    <p>কোনো ভিডিও পাওয়া যায়নি</p>
+    <i class="fa-solid fa-clapperboard"></i>
+    <h3 style="font-size:18px; font-weight:700; color:var(--text-hi); margin-bottom:8px;">প্রথম ভিডিও আসছে শীঘ্রই</h3>
+    <p>এখনো কোনো ভিডিও আপলোড হয়নি — কাজ চলছে। YouTube চ্যানেলে সাবস্ক্রাইব করে রাখুন যাতে প্রথম ভিডিওটা মিস না হয়।</p>
+    <a href="https://youtube.com/@heyrahad?si=Ebu-x5-Qje5a1d7A" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">
+      <i class="fa-brands fa-youtube"></i> চ্যানেল সাবস্ক্রাইব করুন
+    </a>
   </div>
 </section>
 
@@ -437,18 +465,10 @@
 </div>
 
 <script>
-  // ---- Placeholder video data (replace youtubeId with real YouTube video IDs later) ----
-  const DEMO_YT_ID = "aqz-KE-bpKQ"; // temporary demo video, swap per-item youtubeId with real IDs
+  // ---- Real videos go here. Add each one like the commented example below,
+  //      using the actual YouTube video ID (the part after "v=" or after youtu.be/) ----
   const videos = [
-    { id:1, title:"How to Focus on Study for Long Time", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:2, title:"Build Unstoppable Habits", cat:"self", tag:"Self Improvement", tagClass:"tag-self", views:"12K", time:"2 days ago", img:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:3, title:"AI Tools Every Student Should Use", cat:"ai", tag:"AI & Technology", tagClass:"tag-ai", views:"8.4K", time:"5 days ago", img:"https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:4, title:"Start a Business With Zero Capital", cat:"business", tag:"Business Growth", tagClass:"tag-business", views:"15K", time:"1 week ago", img:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:5, title:"Saving Money as a Student", cat:"money", tag:"Money & Finance", tagClass:"tag-money", views:"6.2K", time:"3 days ago", img:"https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:6, title:"Deep Work: Get More Done", cat:"productivity", tag:"Productivity", tagClass:"tag-productivity", views:"9.8K", time:"4 days ago", img:"https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:7, title:"Rewire Your Mindset for Success", cat:"mindset", tag:"Mindset", tagClass:"tag-mindset", views:"11K", time:"6 days ago", img:"https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:8, title:"Everyday Life Skills Nobody Teaches You", cat:"life", tag:"Life Skills", tagClass:"tag-life", views:"7.1K", time:"1 week ago", img:"https://images.unsplash.com/photo-1519222970733-f546218fa6d7?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID },
-    { id:9, title:"How I Study for Exams Efficiently", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"10K", time:"2 weeks ago", img:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop&q=65&auto=format", youtubeId:DEMO_YT_ID }
+    // { id:1, title:"Video Title Here", cat:"study", tag:"Study Smart", tagClass:"tag-study", views:"0", time:"just now", img:"https://your-thumbnail-url.jpg", youtubeId:"REAL_YOUTUBE_ID" },
   ];
 
   const grid = document.getElementById('videoGrid');
